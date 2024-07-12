@@ -6,7 +6,7 @@ import {VRFCoordinatorV2_5Mock} from "@chainlink/contracts/src/v0.8/vrf/mocks/VR
 
 abstract contract CodeConstants {
     /* VRF Mock Values */
-    uin96 public constant MOCK_BASE_FEE = 0.25 ether;
+    uint96 public constant MOCK_BASE_FEE = 0.25 ether;
     uint96 public constant MOCK_GAS_PRICE_LINK = 1e9;
     // LINK / ETH price
     int256 public constant MOCK_WEI_PER_UINT_LINK = 4e15;

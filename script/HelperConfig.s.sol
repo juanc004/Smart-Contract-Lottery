@@ -20,7 +20,7 @@ contract HelperConfig is CodeConstants, Script {
     error HelperConfig__InvalidChainId();
 
     struct NetworkConfig {
-        uint256 entranceFee;
+        uint256 raffleEntranceFee;
         uint256 interval;
         address vrfCoordinator;
         bytes32 gasLane;
@@ -55,7 +55,7 @@ contract HelperConfig is CodeConstants, Script {
     function getSepoliaEthConfig() public pure returns (NetworkConfig memory) {
         return
             NetworkConfig({
-                entranceFee: 0.1 ether, // 1e16 wei
+                raffleEntranceFee: 0.1 ether, // 1e16 wei
                 interval: 30, // 30 seconds
                 vrfCoordinator: 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B,
                 gasLane: 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae,
@@ -82,7 +82,7 @@ contract HelperConfig is CodeConstants, Script {
         vm.stopBroadcast();
 
         localNetworkConfig = NetworkConfig({
-            entranceFee: 0.1 ether, // 1e16 wei
+            raffleEntranceFee: 0.1 ether, // 1e16 wei
             interval: 30, // 30 seconds
             vrfCoordinator: address(vrfCoordinator),
             // does not matter
